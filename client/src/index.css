@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { -webkit-tap-highlight-color: transparent; }
+  body {
+    @apply bg-canvas font-sans text-ink antialiased;
+    background-image:
+      radial-gradient(60rem 30rem at 100% -10%, rgba(31,95,214,.10), transparent 60%),
+      radial-gradient(40rem 24rem at -10% 110%, rgba(15,157,99,.08), transparent 60%);
+    background-attachment: fixed;
+  }
+  h1, h2, h3 { @apply tracking-tight; }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold
+           transition duration-200 active:scale-[0.97] disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-primary { @apply btn bg-brandink text-white shadow-lift hover:brightness-110; }
+  .btn-accent  { @apply btn bg-brandlime text-white hover:brightness-110; }
+  .btn-ghost   { @apply btn border border-ink/10 bg-white/70 text-ink backdrop-blur hover:bg-white; }
+  .card  { @apply rounded-2xl border border-white/70 bg-white/75 shadow-glass backdrop-blur-xl; }
+  .glass { @apply border border-white/60 bg-white/60 backdrop-blur-xl; }
+  .input {
+    @apply w-full rounded-xl border border-ink/10 bg-white/80 px-4 py-3 text-base outline-none transition
+           focus:border-brandink focus:ring-4 focus:ring-brandink/15;
+  }
+  .label { @apply mb-1 block text-[11px] font-semibold uppercase tracking-[0.12em] text-ink/50; }
+  .num   { @apply font-mono tabular-nums; }
+  .scanline {
+    @apply pointer-events-none absolute inset-x-6 h-0.5 rounded-full bg-brandink animate-scanline;
+    box-shadow: 0 0 18px 4px rgba(31,95,214,.6);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scanline { animation: none; top: 50%; }
+  * { transition-duration: 0ms !important; }
+}

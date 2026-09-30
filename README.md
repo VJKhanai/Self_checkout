@@ -1,5 +1,16 @@
 # Self_checkout (MERN)
 
+
+## Live Demo
+- App: https://self-checkout-flame.vercel.app
+- API: https://self-checkout-api.onrender.com/api/brands
+
+Demo login: any name and phone number, OTP `123456`.
+Sample barcodes: ZUD11000, ZUD11001 (Zudio).
+
+> The API runs on Render's free tier, so the first request may take up to a minute.
+
+
 Mobile-first self-checkout for retail stores. Customers pick a store, scan product
 barcodes with the phone camera, pay, and get a signed single-use **exit QR** plus a
 GST bill that a guard verifies before removing security tags.
